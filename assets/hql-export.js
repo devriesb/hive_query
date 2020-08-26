@@ -113,6 +113,16 @@ $('#btn-get-sql').on('click', function() {
 });
 
 
+$('#preview-hive').on('click', function() {
+    $.post("http://sandbox-hdp.hortonworks.com:18081/submit",
+        {
+            name: "Donald Duck",
+            city: "Duckburg"
+        },
+        function(data,status){
+            alert("Data: " + data + "\nStatus: " + status);
+        });
+});
 
 $('#download-hive').on('click', function() {
 
