@@ -7,7 +7,7 @@
     <script>
 $(document).ready(function(){
   $("button").click(function(){
-    $.get("jquery-get.html", function(data, status){
+    $.get("http://sandbox-hdp.hortonworks.com:18081/submit", function(data, status){
       alert("Data: " + data + "\nStatus: " + status);
     });
   });
