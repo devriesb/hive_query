@@ -112,4 +112,10 @@ $('#btn-get-sql').on('click', function() {
   }
 });
 
+$('#preview-hive-results').on('click', function() {
+
+    alert("clicked preview"));
+
+});
+
 
