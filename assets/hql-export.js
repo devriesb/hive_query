@@ -122,7 +122,7 @@ $.ajaxSetup({
    }
 });
     $.post("http://sandbox-hdp.hortonworks.com:18081/submit",
-`{"sql": "${result.sql}"}`
+`{"sql": "${result.sql}","delivery": "preview"}`
 , function(data,status){
             alert("Data: " + data + "\nStatus: " + status);
             $('#preview-results').htmlString(data);
