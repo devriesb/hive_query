@@ -102,6 +102,7 @@ $('#builder-hql').queryBuilder({
 
 $('#btn-reset').on('click', function() {
   $('#builder-hql').queryBuilder('reset');
+  $('#preview-results').html('');
 });
 
 $('#btn-get-sql').on('click', function() {
