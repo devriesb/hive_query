@@ -102,7 +102,10 @@ $('#builder-hql').queryBuilder({
 
 $('#btn-reset').on('click', function() {
   $('#builder-hql').queryBuilder('reset');
-  $('#preview-results').html('');
+});
+
+$('#hql-reset').on('click', function() {
+  $('#preview-results').empty();
 });
 
 $('#btn-get-sql').on('click', function() {
