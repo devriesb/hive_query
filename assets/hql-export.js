@@ -145,6 +145,19 @@ $.ajaxSetup({
 `{"sql": "${result.sql}","delivery": "preview"}`
 , function(data,status){
             alert("Data: " + data + "\nStatus: " + status);
+
+        // The actual download
+        var blob = new Blob([data], { type: 'text/csv' });
+        var link = document.createElement('a');
+        link.href = window.URL.createObjectURL(blob);
+        link.download = "results.csv";
+
+        document.body.appendChild(link);
+
+        link.click();
+
+        document.body.removeChild(link);
+
         });
 });
 
