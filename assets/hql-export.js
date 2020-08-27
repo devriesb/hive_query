@@ -114,15 +114,20 @@ $('#btn-get-sql').on('click', function() {
 
 
 $('#preview-hive').on('click', function() {
+  var result = $('#builder-hql').queryBuilder('getSQL',false);
+
+$.ajaxSetup({
+   headers:{
+      'Content-Type': 'application/json'
+   }
+});
     $.post("http://sandbox-hdp.hortonworks.com:18081/submit",
-        {
-            name: "Donald Duck",
-            city: "Duckburg"
-        },
-        function(data,status){
+`{"sql": "${result.sql}"}`
+, function(data,status){
             alert("Data: " + data + "\nStatus: " + status);
         });
 });
+
 
 $('#download-hive').on('click', function() {
 
