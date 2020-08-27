@@ -125,6 +125,7 @@ $.ajaxSetup({
 `{"sql": "${result.sql}"}`
 , function(data,status){
             alert("Data: " + data + "\nStatus: " + status);
+            $('#preview-results').htmlString(data);
         });
 });
 
