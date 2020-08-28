@@ -6,9 +6,28 @@ $('#builder-hql').queryBuilder({
      'not-group'
    ],
    filters: [
- {
-     id: 'date',
-     label: 'Datepicker',
+     {
+         id: 'telemeter',
+         label: 'Telemeter',
+         type: 'string',
+         input: 'select',
+         values: {
+             'Telemeter A': 'Telemeter A',
+             'Telemeter B': 'Telemeter B',
+             'Telemeter C': 'Telemeter C'
+         },
+         operators: [
+                 'equal',
+                 'not_equal',
+                 'in',
+                 'not_in',
+                 'is_null',
+                 'is_not_null'
+         ]
+     },
+     {
+     id: 'eventdate',
+     label: 'Event Date',
      type: 'date',
      validation: {
        format: 'YYYY/MM/DD'
@@ -22,82 +41,73 @@ $('#builder-hql').queryBuilder({
      }
    },
      {
-       id: 'key',
-       label: 'key',
-       type: 'string'
+         id: 'metadata_1',
+         label: 'Metadata 1',
+         type: 'string'
      },
      {
-       id: 'foo',
-       label: 'foo',
-       type: 'string'
+         id: 'metadata_2',
+         label: 'Metadata 2',
+         type: 'string'
      },
      {
-       id: 'bar',
-       label: 'bar',
-       type: 'string'
+         id: 'metadata_x',
+         label: 'Metadata X',
+         type: 'string'
      },
-     {
-       id: 'baz',
-       label: 'baz',
-       type: 'string'
-     },
-     {
-       id: 'category',
-       label: 'Category',
-       type: 'integer',
-       input: 'select',
-       values: {
-         1: 'Books',
-         2: 'Movies',
-         3: 'Music',
-         4: 'Tools',
-         5: 'Goodies',
-         6: 'Clothes'
-       },
-       operators: [
-         'equal',
-         'not_equal',
-         'in',
-         'not_in',
-         'is_null',
-         'is_not_null'
-       ]
-     },
-     {
-       id: 'in_stock',
-       label: 'In stock',
-       type: 'integer',
-       input: 'radio',
-       values: {
-         1: 'Yes',
-         0: 'No'
-       },
-       operators: [
-         'equal'
-       ]
-     },
-     {
-       id: 'price',
-       label: 'Price',
-       type: 'double',
-       validation: {
-         min: 0,
-         step: 0.01
-       }
-     },
-     {
-       id: 'id',
-       label: 'Identifier',
-       type: 'string',
-       placeholder: '____-____-____',
-       operators: [
-         'equal',
-         'not_equal'
-       ],
-        validation: {
-          format: /^.{4}-.{4}-.{4}$/
-        }
-  }]
+    {
+        id: 'tmats_metadata_1',
+        label: 'TMATS Metadata 1',
+        type: 'string'
+    },
+    {
+        id: 'tmats_metadata_2',
+        label: 'TMATS Metadata 2',
+        type: 'string'
+    },
+    {
+        id: 'tmats_metadata_x',
+        label: 'TMATS Metadata X',
+        type: 'string'
+    },
+
+    {
+        id: 'ch_10_datapoint_1',
+        label: 'Ch 10 Data Point 1',
+        type: 'double'
+    },
+    {
+        id: 'ch_10_datapoint_2',
+        label: 'Ch 10 Data Point 2',
+        type: 'double'
+    },
+    {
+        id: 'ch_10_datapoint_x',
+        label: 'Ch 10 Data Point X',
+        type: 'double'
+    },
+      {
+        id: 'key',
+        label: 'key',
+        type: 'string'
+      },
+       {
+           id: 'ts',
+           label: 'Datapoint Timestamp',
+           type: 'date',
+           validation: {
+             format: 'YYYY/MM/DD'
+           },
+           plugin: 'datepicker',
+           plugin_config: {
+             format: 'yyyy/mm/dd',
+             todayBtn: 'linked',
+             todayHighlight: true,
+             autoclose: true
+           }
+         }
+
+]
 });
 
 $('#btn-reset').on('click', function() {
