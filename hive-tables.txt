@@ -1,4 +1,4 @@
-create table telemeter_metadata(
+create table telemeter_metadata_2(
 key string,
 eventdate timestamp,
 telemeter string,
@@ -10,7 +10,7 @@ clustered by (key) into 5 buckets
 stored as orc
 tblproperties ("transactional"="true");
 
-create table chapter10_metadata(
+create table chapter10_metadata_2(
 key string,
 tmats_metadata_1 string,
 tmats_metadata_2 string,
@@ -20,7 +20,7 @@ clustered by (key) into 5 buckets
 stored as orc
 tblproperties ("transactional"="true");
 
-create table chapter10_data(
+create table chapter10_data_2(
 key string,
 ts timestamp,
 ch_10_datapoint_1 decimal,
