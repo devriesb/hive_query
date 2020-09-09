@@ -26,12 +26,12 @@ $('#builder-hql').queryBuilder({
          ]
      },{
                id: 'file1',
-               label: 'key',
+               label: 'file1',
                type: 'string'
              },
              {
                      id: 'file2',
-                     label: 'key',
+                     label: 'file2',
                      type: 'string'
                    },
      {
