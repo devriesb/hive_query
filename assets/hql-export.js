@@ -24,7 +24,16 @@ $('#builder-hql').queryBuilder({
                  'is_null',
                  'is_not_null'
          ]
-     },
+     },{
+               id: 'file1',
+               label: 'key',
+               type: 'string'
+             },
+             {
+                     id: 'file2',
+                     label: 'key',
+                     type: 'string'
+                   },
      {
      id: 'eventdate',
      label: 'Event Date',
