@@ -2702,7 +2702,7 @@ ${UUID()},${now():toNumber()}, x,y,z</value>
     <entry>
         <key>Replacement Value</key>
         <value>key,eventdate, telemeter,metadata_1,metadata_2,metadata_x,tmats_metadata_1,tmats_metadata_2,tmats_metadata_x,ch_10_datapoint_1,ch_10_datapoint_2,ch_10_datapoint_x,file1,file2
-${key},${now():toNumber()}, ${random():mod(3):toString():replace('0','Telemeter A'):replace('1','Telemeter B'):replace('2','Telemeter C')}, ${random():toString():base64Encode():substringBefore('=')}, ${random():toString():base64Encode():substringBefore('=')}, ${random():toString():base64Encode():substringBefore('=')},  ${random():toString():base64Encode():substringBefore('=')},${random():toString():base64Encode():substringBefore('=')},${random():toString():base64Encode():substringBefore('=')},${random():toNumber()},${random():toNumber()},${random():toNumber()},${file1},${file2}}</value>
+${key},${now():toNumber()}, ${random():mod(3):toString():replace('0','Telemeter A'):replace('1','Telemeter B'):replace('2','Telemeter C')}, ${random():toString():base64Encode():substringBefore('=')}, ${random():toString():base64Encode():substringBefore('=')}, ${random():toString():base64Encode():substringBefore('=')},  ${random():toString():base64Encode():substringBefore('=')},${random():toString():base64Encode():substringBefore('=')},${random():toString():base64Encode():substringBefore('=')},${random():toNumber()},${random():toNumber()},${random():toNumber()},${file1},${file2}</value>
     </entry>
     <entry>
         <key>Character Set</key>
@@ -4104,7 +4104,7 @@ ${key},${now():toNumber()}, ${random():mod(3):toString():replace('0','Telemeter 
                             <backPressureObjectThreshold>10000</backPressureObjectThreshold>
                             <destination>
 <groupId>b243ac12-e87c-3cd2-0000-000000000000</groupId>
-<id>2f3e5f91-e0c6-399f-0000-000000000000</id>
+<id>f0872174-132e-3b4e-0000-000000000000</id>
 <type>PROCESSOR</type>
                             </destination>
                             <flowFileExpiration>0 sec</flowFileExpiration>
@@ -4118,6 +4118,39 @@ ${key},${now():toNumber()}, ${random():mod(3):toString():replace('0','Telemeter 
                             <source>
 <groupId>b243ac12-e87c-3cd2-0000-000000000000</groupId>
 <id>f178b69c-b90b-3db6-0000-000000000000</id>
+<type>PROCESSOR</type>
+                            </source>
+                            <zIndex>0</zIndex>
+                        </connections>
+                        <connections>
+                            <id>0715d1e1-241d-3b26-0000-000000000000</id>
+                            <parentGroupId>b243ac12-e87c-3cd2-0000-000000000000</parentGroupId>
+                            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+                            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+                            <bends>
+<x>2404.5546875</x>
+<y>1954.37060546875</y>
+                            </bends>
+                            <bends>
+<x>2404.5546875</x>
+<y>2004.37060546875</y>
+                            </bends>
+                            <destination>
+<groupId>b243ac12-e87c-3cd2-0000-000000000000</groupId>
+<id>f0872174-132e-3b4e-0000-000000000000</id>
+<type>PROCESSOR</type>
+                            </destination>
+                            <flowFileExpiration>0 sec</flowFileExpiration>
+                            <labelIndex>1</labelIndex>
+                            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+                            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+                            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+                            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+                            <name></name>
+                            <selectedRelationships>failure</selectedRelationships>
+                            <source>
+<groupId>b243ac12-e87c-3cd2-0000-000000000000</groupId>
+<id>f0872174-132e-3b4e-0000-000000000000</id>
 <type>PROCESSOR</type>
                             </source>
                             <zIndex>0</zIndex>
@@ -4147,6 +4180,32 @@ ${key},${now():toNumber()}, ${random():mod(3):toString():replace('0','Telemeter 
                             <zIndex>0</zIndex>
                         </connections>
                         <connections>
+                            <id>24d6cfdd-f553-3b52-0000-000000000000</id>
+                            <parentGroupId>b243ac12-e87c-3cd2-0000-000000000000</parentGroupId>
+                            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+                            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+                            <destination>
+<groupId>b243ac12-e87c-3cd2-0000-000000000000</groupId>
+<id>c21dac49-2169-32f3-0000-000000000000</id>
+<type>PROCESSOR</type>
+                            </destination>
+                            <flowFileExpiration>0 sec</flowFileExpiration>
+                            <labelIndex>1</labelIndex>
+                            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+                            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+                            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+                            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+                            <name></name>
+                            <selectedRelationships>failure</selectedRelationships>
+                            <selectedRelationships>success</selectedRelationships>
+                            <source>
+<groupId>b243ac12-e87c-3cd2-0000-000000000000</groupId>
+<id>8c7b62e7-0111-34bd-0000-000000000000</id>
+<type>PROCESSOR</type>
+                            </source>
+                            <zIndex>0</zIndex>
+                        </connections>
+                        <connections>
                             <id>2a8d4e78-3dc6-3103-0000-000000000000</id>
                             <parentGroupId>b243ac12-e87c-3cd2-0000-000000000000</parentGroupId>
                             <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
@@ -4171,6 +4230,32 @@ ${key},${now():toNumber()}, ${random():mod(3):toString():replace('0','Telemeter 
                             <source>
 <groupId>b243ac12-e87c-3cd2-0000-000000000000</groupId>
 <id>132abe3f-58a6-372f-0000-000000000000</id>
+<type>PROCESSOR</type>
+                            </source>
+                            <zIndex>0</zIndex>
+                        </connections>
+                        <connections>
+                            <id>2e98071f-fce1-37ec-0000-000000000000</id>
+                            <parentGroupId>b243ac12-e87c-3cd2-0000-000000000000</parentGroupId>
+                            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+                            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+                            <destination>
+<groupId>b243ac12-e87c-3cd2-0000-000000000000</groupId>
+<id>8c7b62e7-0111-34bd-0000-000000000000</id>
+<type>PROCESSOR</type>
+                            </destination>
+                            <flowFileExpiration>0 sec</flowFileExpiration>
+                            <labelIndex>1</labelIndex>
+                            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+                            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+                            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+                            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+                            <name></name>
+                            <selectedRelationships>failure</selectedRelationships>
+                            <selectedRelationships>success</selectedRelationships>
+                            <source>
+<groupId>b243ac12-e87c-3cd2-0000-000000000000</groupId>
+<id>c86ec72e-392e-35f6-0000-000000000000</id>
 <type>PROCESSOR</type>
                             </source>
                             <zIndex>0</zIndex>
@@ -4221,6 +4306,32 @@ ${key},${now():toNumber()}, ${random():mod(3):toString():replace('0','Telemeter 
                             <source>
 <groupId>b243ac12-e87c-3cd2-0000-000000000000</groupId>
 <id>59f149f7-a95a-3c09-0000-000000000000</id>
+<type>PROCESSOR</type>
+                            </source>
+                            <zIndex>0</zIndex>
+                        </connections>
+                        <connections>
+                            <id>4a554164-0dc9-3255-0000-000000000000</id>
+                            <parentGroupId>b243ac12-e87c-3cd2-0000-000000000000</parentGroupId>
+                            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+                            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+                            <destination>
+<groupId>b243ac12-e87c-3cd2-0000-000000000000</groupId>
+<id>c86ec72e-392e-35f6-0000-000000000000</id>
+<type>PROCESSOR</type>
+                            </destination>
+                            <flowFileExpiration>0 sec</flowFileExpiration>
+                            <labelIndex>1</labelIndex>
+                            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+                            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+                            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+                            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+                            <name></name>
+                            <selectedRelationships>failure</selectedRelationships>
+                            <selectedRelationships>success</selectedRelationships>
+                            <source>
+<groupId>b243ac12-e87c-3cd2-0000-000000000000</groupId>
+<id>a5f4a0e4-428d-3176-0000-000000000000</id>
 <type>PROCESSOR</type>
                             </source>
                             <zIndex>0</zIndex>
@@ -4326,6 +4437,36 @@ ${key},${now():toNumber()}, ${random():mod(3):toString():replace('0','Telemeter 
                             <zIndex>0</zIndex>
                         </connections>
                         <connections>
+                            <id>77392fa0-d8d8-3773-0000-000000000000</id>
+                            <parentGroupId>b243ac12-e87c-3cd2-0000-000000000000</parentGroupId>
+                            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+                            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+                            <bends>
+<x>2576.0</x>
+<y>2744.0</y>
+                            </bends>
+                            <destination>
+<groupId>b243ac12-e87c-3cd2-0000-000000000000</groupId>
+<id>e59a887a-6782-3d22-0000-000000000000</id>
+<type>PROCESSOR</type>
+                            </destination>
+                            <flowFileExpiration>0 sec</flowFileExpiration>
+                            <labelIndex>0</labelIndex>
+                            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+                            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+                            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+                            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+                            <name></name>
+                            <selectedRelationships>failure</selectedRelationships>
+                            <selectedRelationships>success</selectedRelationships>
+                            <source>
+<groupId>b243ac12-e87c-3cd2-0000-000000000000</groupId>
+<id>c21dac49-2169-32f3-0000-000000000000</id>
+<type>PROCESSOR</type>
+                            </source>
+                            <zIndex>0</zIndex>
+                        </connections>
+                        <connections>
                             <id>8040bb80-6776-37c7-0000-000000000000</id>
                             <parentGroupId>b243ac12-e87c-3cd2-0000-000000000000</parentGroupId>
                             <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
@@ -4403,6 +4544,31 @@ ${key},${now():toNumber()}, ${random():mod(3):toString():replace('0','Telemeter 
                             <source>
 <groupId>b243ac12-e87c-3cd2-0000-000000000000</groupId>
 <id>f178b69c-b90b-3db6-0000-000000000000</id>
+<type>PROCESSOR</type>
+                            </source>
+                            <zIndex>0</zIndex>
+                        </connections>
+                        <connections>
+                            <id>a8427eeb-e951-36cf-0000-000000000000</id>
+                            <parentGroupId>b243ac12-e87c-3cd2-0000-000000000000</parentGroupId>
+                            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+                            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+                            <destination>
+<groupId>b243ac12-e87c-3cd2-0000-000000000000</groupId>
+<id>a5f4a0e4-428d-3176-0000-000000000000</id>
+<type>PROCESSOR</type>
+                            </destination>
+                            <flowFileExpiration>0 sec</flowFileExpiration>
+                            <labelIndex>0</labelIndex>
+                            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+                            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+                            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+                            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+                            <name></name>
+                            <selectedRelationships>success</selectedRelationships>
+                            <source>
+<groupId>b243ac12-e87c-3cd2-0000-000000000000</groupId>
+<id>f0872174-132e-3b4e-0000-000000000000</id>
 <type>PROCESSOR</type>
                             </source>
                             <zIndex>0</zIndex>
@@ -4750,6 +4916,62 @@ ${key},${now():toNumber()}, ${random():mod(3):toString():replace('0','Telemeter 
                             </source>
                             <zIndex>0</zIndex>
                         </connections>
+                        <controllerServices>
+                            <id>694fb5fd-1d64-3deb-0000-000000000000</id>
+                            <parentGroupId>b243ac12-e87c-3cd2-0000-000000000000</parentGroupId>
+                            <bundle>
+<artifact>nifi-scripting-nar</artifact>
+<group>org.apache.nifi</group>
+<version>1.11.4</version>
+                            </bundle>
+                            <comments></comments>
+                            <descriptors>
+<entry>
+    <key>Script Engine</key>
+    <value>
+        <name>Script Engine</name>
+    </value>
+</entry>
+<entry>
+    <key>Script File</key>
+    <value>
+        <name>Script File</name>
+    </value>
+</entry>
+<entry>
+    <key>Script Body</key>
+    <value>
+        <name>Script Body</name>
+    </value>
+</entry>
+<entry>
+    <key>Module Directory</key>
+    <value>
+        <name>Module Directory</name>
+    </value>
+</entry>
+                            </descriptors>
+                            <name>ScriptedRecordSetWriter</name>
+                            <persistsState>false</persistsState>
+                            <properties>
+<entry>
+    <key>Script Engine</key>
+    <value>Groovy</value>
+</entry>
+<entry>
+    <key>Script File</key>
+    <value>/home/raj_ops/hive_query/createTable.groovy</value>
+</entry>
+<entry>
+    <key>Script Body</key>
+</entry>
+<entry>
+    <key>Module Directory</key>
+</entry>
+                            </properties>
+                            <state>ENABLED</state>
+                            <type>org.apache.nifi.record.script.ScriptedRecordSetWriter</type>
+                        </controllerServices>
                         <funnels>
                             <id>283dd15e-26f5-3335-0000-000000000000</id>
                             <parentGroupId>b243ac12-e87c-3cd2-0000-000000000000</parentGroupId>
@@ -5335,8 +5557,8 @@ ${key},${now():toNumber()}, ${random():mod(3):toString():replace('0','Telemeter 
                             <id>2f3e5f91-e0c6-399f-0000-000000000000</id>
                             <parentGroupId>b243ac12-e87c-3cd2-0000-000000000000</parentGroupId>
                             <position>
-<x>2592.0</x>
-<y>1448.0</y>
+<x>2584.0</x>
+<y>1584.0</y>
                             </position>
                             <bundle>
 <artifact>nifi-scripting-nar</artifact>
@@ -5873,6 +6095,118 @@ ${delivery:equalsIgnoreCase('preview'):ifElse('LIMIT 20','')}</value>
                             <type>org.apache.nifi.processors.attributes.UpdateAttribute</type>
                         </processors>
                         <processors>
+                            <id>8c7b62e7-0111-34bd-0000-000000000000</id>
+                            <parentGroupId>b243ac12-e87c-3cd2-0000-000000000000</parentGroupId>
+                            <position>
+<x>1928.0</x>
+<y>2568.0</y>
+                            </position>
+                            <bundle>
+<artifact>nifi-standard-nar</artifact>
+<group>org.apache.nifi</group>
+<version>1.11.4</version>
+                            </bundle>
+                            <config>
+<bulletinLevel>WARN</bulletinLevel>
+<comments></comments>
+<concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+<descriptors>
+    <entry>
+        <key>Regular Expression</key>
+        <value>
+            <name>Regular Expression</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Replacement Value</key>
+        <value>
+            <name>Replacement Value</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Character Set</key>
+        <value>
+            <name>Character Set</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Maximum Buffer Size</key>
+        <value>
+            <name>Maximum Buffer Size</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Replacement Strategy</key>
+        <value>
+            <name>Replacement Strategy</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Evaluation Mode</key>
+        <value>
+            <name>Evaluation Mode</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Line-by-Line Evaluation Mode</key>
+        <value>
+            <name>Line-by-Line Evaluation Mode</name>
+        </value>
+    </entry>
+</descriptors>
+<executionNode>ALL</executionNode>
+<lossTolerant>false</lossTolerant>
+<penaltyDuration>30 sec</penaltyDuration>
+<properties>
+    <entry>
+        <key>Regular Expression</key>
+        <value>&amp;gt;</value>
+    </entry>
+    <entry>
+        <key>Replacement Value</key>
+        <value>&gt;</value>
+    </entry>
+    <entry>
+        <key>Character Set</key>
+        <value>UTF-8</value>
+    </entry>
+    <entry>
+        <key>Maximum Buffer Size</key>
+        <value>1 MB</value>
+    </entry>
+    <entry>
+        <key>Replacement Strategy</key>
+        <value>Regex Replace</value>
+    </entry>
+    <entry>
+        <key>Evaluation Mode</key>
+        <value>Entire text</value>
+    </entry>
+    <entry>
+        <key>Line-by-Line Evaluation Mode</key>
+        <value>All</value>
+    </entry>
+</properties>
+<runDurationMillis>0</runDurationMillis>
+<schedulingPeriod>0 sec</schedulingPeriod>
+<schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+<yieldDuration>1 sec</yieldDuration>
+                            </config>
+                            <executionNodeRestricted>false</executionNodeRestricted>
+                            <name>right bracket</name>
+                            <relationships>
+<autoTerminate>false</autoTerminate>
+<name>failure</name>
+                            </relationships>
+                            <relationships>
+<autoTerminate>false</autoTerminate>
+<name>success</name>
+                            </relationships>
+                            <state>RUNNING</state>
+                            <style/>
+                            <type>org.apache.nifi.processors.standard.ReplaceText</type>
+                        </processors>
+                        <processors>
                             <id>a0761dd9-3977-3f7e-0000-000000000000</id>
                             <parentGroupId>b243ac12-e87c-3cd2-0000-000000000000</parentGroupId>
                             <position>
@@ -5935,11 +6269,356 @@ ${delivery:equalsIgnoreCase('preview'):ifElse('LIMIT 20','')}</value>
                             <type>org.apache.nifi.processors.standard.RouteOnAttribute</type>
                         </processors>
                         <processors>
+                            <id>a5f4a0e4-428d-3176-0000-000000000000</id>
+                            <parentGroupId>b243ac12-e87c-3cd2-0000-000000000000</parentGroupId>
+                            <position>
+<x>1936.0</x>
+<y>2152.0</y>
+                            </position>
+                            <bundle>
+<artifact>nifi-standard-nar</artifact>
+<group>org.apache.nifi</group>
+<version>1.11.4</version>
+                            </bundle>
+                            <config>
+<bulletinLevel>WARN</bulletinLevel>
+<comments></comments>
+<concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+<descriptors>
+    <entry>
+        <key>Regular Expression</key>
+        <value>
+            <name>Regular Expression</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Replacement Value</key>
+        <value>
+            <name>Replacement Value</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Character Set</key>
+        <value>
+            <name>Character Set</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Maximum Buffer Size</key>
+        <value>
+            <name>Maximum Buffer Size</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Replacement Strategy</key>
+        <value>
+            <name>Replacement Strategy</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Evaluation Mode</key>
+        <value>
+            <name>Evaluation Mode</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Line-by-Line Evaluation Mode</key>
+        <value>
+            <name>Line-by-Line Evaluation Mode</name>
+        </value>
+    </entry>
+</descriptors>
+<executionNode>ALL</executionNode>
+<lossTolerant>false</lossTolerant>
+<penaltyDuration>30 sec</penaltyDuration>
+<properties>
+    <entry>
+        <key>Regular Expression</key>
+        <value>record&gt;</value>
+    </entry>
+    <entry>
+        <key>Replacement Value</key>
+        <value>tr&gt;</value>
+    </entry>
+    <entry>
+        <key>Character Set</key>
+        <value>UTF-8</value>
+    </entry>
+    <entry>
+        <key>Maximum Buffer Size</key>
+        <value>1 MB</value>
+    </entry>
+    <entry>
+        <key>Replacement Strategy</key>
+        <value>Regex Replace</value>
+    </entry>
+    <entry>
+        <key>Evaluation Mode</key>
+        <value>Entire text</value>
+    </entry>
+    <entry>
+        <key>Line-by-Line Evaluation Mode</key>
+        <value>All</value>
+    </entry>
+</properties>
+<runDurationMillis>0</runDurationMillis>
+<schedulingPeriod>0 sec</schedulingPeriod>
+<schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+<yieldDuration>1 sec</yieldDuration>
+                            </config>
+                            <executionNodeRestricted>false</executionNodeRestricted>
+                            <name>record -&gt; tr</name>
+                            <relationships>
+<autoTerminate>false</autoTerminate>
+<name>failure</name>
+                            </relationships>
+                            <relationships>
+<autoTerminate>false</autoTerminate>
+<name>success</name>
+                            </relationships>
+                            <state>RUNNING</state>
+                            <style/>
+                            <type>org.apache.nifi.processors.standard.ReplaceText</type>
+                        </processors>
+                        <processors>
+                            <id>c21dac49-2169-32f3-0000-000000000000</id>
+                            <parentGroupId>b243ac12-e87c-3cd2-0000-000000000000</parentGroupId>
+                            <position>
+<x>1944.0</x>
+<y>2808.0</y>
+                            </position>
+                            <bundle>
+<artifact>nifi-standard-nar</artifact>
+<group>org.apache.nifi</group>
+<version>1.11.4</version>
+                            </bundle>
+                            <config>
+<bulletinLevel>WARN</bulletinLevel>
+<comments></comments>
+<concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+<descriptors>
+    <entry>
+        <key>Regular Expression</key>
+        <value>
+            <name>Regular Expression</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Replacement Value</key>
+        <value>
+            <name>Replacement Value</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Character Set</key>
+        <value>
+            <name>Character Set</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Maximum Buffer Size</key>
+        <value>
+            <name>Maximum Buffer Size</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Replacement Strategy</key>
+        <value>
+            <name>Replacement Strategy</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Evaluation Mode</key>
+        <value>
+            <name>Evaluation Mode</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Line-by-Line Evaluation Mode</key>
+        <value>
+            <name>Line-by-Line Evaluation Mode</name>
+        </value>
+    </entry>
+</descriptors>
+<executionNode>ALL</executionNode>
+<lossTolerant>false</lossTolerant>
+<penaltyDuration>30 sec</penaltyDuration>
+<properties>
+    <entry>
+        <key>Regular Expression</key>
+        <value>(?s)(^.*$)</value>
+    </entry>
+    <entry>
+        <key>Replacement Value</key>
+        <value>&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;results&lt;/title&gt;
+&lt;style type="text/css"&gt;
+td {background-color:#ddddff; }
+thead td {background-color:#ddffdd; text-align:center; }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;&lt;table&gt;$1&lt;/table&gt;&lt;/body&gt;
+&lt;/html&gt;</value>
+    </entry>
+    <entry>
+        <key>Character Set</key>
+        <value>UTF-8</value>
+    </entry>
+    <entry>
+        <key>Maximum Buffer Size</key>
+        <value>1 MB</value>
+    </entry>
+    <entry>
+        <key>Replacement Strategy</key>
+        <value>Regex Replace</value>
+    </entry>
+    <entry>
+        <key>Evaluation Mode</key>
+        <value>Entire text</value>
+    </entry>
+    <entry>
+        <key>Line-by-Line Evaluation Mode</key>
+        <value>All</value>
+    </entry>
+</properties>
+<runDurationMillis>0</runDurationMillis>
+<schedulingPeriod>0 sec</schedulingPeriod>
+<schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+<yieldDuration>1 sec</yieldDuration>
+                            </config>
+                            <executionNodeRestricted>false</executionNodeRestricted>
+                            <name>wrap table</name>
+                            <relationships>
+<autoTerminate>false</autoTerminate>
+<name>failure</name>
+                            </relationships>
+                            <relationships>
+<autoTerminate>false</autoTerminate>
+<name>success</name>
+                            </relationships>
+                            <state>RUNNING</state>
+                            <style/>
+                            <type>org.apache.nifi.processors.standard.ReplaceText</type>
+                        </processors>
+                        <processors>
+                            <id>c86ec72e-392e-35f6-0000-000000000000</id>
+                            <parentGroupId>b243ac12-e87c-3cd2-0000-000000000000</parentGroupId>
+                            <position>
+<x>1936.0</x>
+<y>2376.0</y>
+                            </position>
+                            <bundle>
+<artifact>nifi-standard-nar</artifact>
+<group>org.apache.nifi</group>
+<version>1.11.4</version>
+                            </bundle>
+                            <config>
+<bulletinLevel>WARN</bulletinLevel>
+<comments></comments>
+<concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+<descriptors>
+    <entry>
+        <key>Regular Expression</key>
+        <value>
+            <name>Regular Expression</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Replacement Value</key>
+        <value>
+            <name>Replacement Value</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Character Set</key>
+        <value>
+            <name>Character Set</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Maximum Buffer Size</key>
+        <value>
+            <name>Maximum Buffer Size</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Replacement Strategy</key>
+        <value>
+            <name>Replacement Strategy</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Evaluation Mode</key>
+        <value>
+            <name>Evaluation Mode</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Line-by-Line Evaluation Mode</key>
+        <value>
+            <name>Line-by-Line Evaluation Mode</name>
+        </value>
+    </entry>
+</descriptors>
+<executionNode>ALL</executionNode>
+<lossTolerant>false</lossTolerant>
+<penaltyDuration>30 sec</penaltyDuration>
+<properties>
+    <entry>
+        <key>Regular Expression</key>
+        <value>&amp;lt;</value>
+    </entry>
+    <entry>
+        <key>Replacement Value</key>
+        <value>&lt;</value>
+    </entry>
+    <entry>
+        <key>Character Set</key>
+        <value>UTF-8</value>
+    </entry>
+    <entry>
+        <key>Maximum Buffer Size</key>
+        <value>1 MB</value>
+    </entry>
+    <entry>
+        <key>Replacement Strategy</key>
+        <value>Regex Replace</value>
+    </entry>
+    <entry>
+        <key>Evaluation Mode</key>
+        <value>Entire text</value>
+    </entry>
+    <entry>
+        <key>Line-by-Line Evaluation Mode</key>
+        <value>All</value>
+    </entry>
+</properties>
+<runDurationMillis>0</runDurationMillis>
+<schedulingPeriod>0 sec</schedulingPeriod>
+<schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+<yieldDuration>1 sec</yieldDuration>
+                            </config>
+                            <executionNodeRestricted>false</executionNodeRestricted>
+                            <name>left bracket</name>
+                            <relationships>
+<autoTerminate>false</autoTerminate>
+<name>failure</name>
+                            </relationships>
+                            <relationships>
+<autoTerminate>false</autoTerminate>
+<name>success</name>
+                            </relationships>
+                            <state>RUNNING</state>
+                            <style/>
+                            <type>org.apache.nifi.processors.standard.ReplaceText</type>
+                        </processors>
+                        <processors>
                             <id>e59a887a-6782-3d22-0000-000000000000</id>
                             <parentGroupId>b243ac12-e87c-3cd2-0000-000000000000</parentGroupId>
                             <position>
 <x>2592.0</x>
-<y>1672.0</y>
+<y>1976.0</y>
                             </position>
                             <bundle>
 <artifact>nifi-update-attribute-nar</artifact>
@@ -6021,6 +6700,80 @@ ${delivery:equalsIgnoreCase('preview'):ifElse('LIMIT 20','')}</value>
                             <type>org.apache.nifi.processors.attributes.UpdateAttribute</type>
                         </processors>
                         <processors>
+                            <id>f0872174-132e-3b4e-0000-000000000000</id>
+                            <parentGroupId>b243ac12-e87c-3cd2-0000-000000000000</parentGroupId>
+                            <position>
+<x>1936.0</x>
+<y>1920.0</y>
+                            </position>
+                            <bundle>
+<artifact>nifi-standard-nar</artifact>
+<group>org.apache.nifi</group>
+<version>1.11.4</version>
+                            </bundle>
+                            <config>
+<bulletinLevel>WARN</bulletinLevel>
+<comments></comments>
+<concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+<descriptors>
+    <entry>
+        <key>record-reader</key>
+        <value>
+            <identifiesControllerService>org.apache.nifi.serialization.RecordReaderFactory</identifiesControllerService>
+            <name>record-reader</name>
+        </value>
+    </entry>
+    <entry>
+        <key>record-writer</key>
+        <value>
+            <identifiesControllerService>org.apache.nifi.serialization.RecordSetWriterFactory</identifiesControllerService>
+            <name>record-writer</name>
+        </value>
+    </entry>
+    <entry>
+        <key>include-zero-record-flowfiles</key>
+        <value>
+            <name>include-zero-record-flowfiles</name>
+        </value>
+    </entry>
+</descriptors>
+<executionNode>ALL</executionNode>
+<lossTolerant>false</lossTolerant>
+<penaltyDuration>30 sec</penaltyDuration>
+<properties>
+    <entry>
+        <key>record-reader</key>
+        <value>18b8a64a-fc25-3072-0000-000000000000</value>
+    </entry>
+    <entry>
+        <key>record-writer</key>
+        <value>694fb5fd-1d64-3deb-0000-000000000000</value>
+    </entry>
+    <entry>
+        <key>include-zero-record-flowfiles</key>
+        <value>true</value>
+    </entry>
+</properties>
+<runDurationMillis>0</runDurationMillis>
+<schedulingPeriod>0 sec</schedulingPeriod>
+<schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+<yieldDuration>1 sec</yieldDuration>
+                            </config>
+                            <executionNodeRestricted>false</executionNodeRestricted>
+                            <name>ConvertRecord</name>
+                            <relationships>
+<autoTerminate>false</autoTerminate>
+<name>failure</name>
+                            </relationships>
+                            <relationships>
+<autoTerminate>false</autoTerminate>
+<name>success</name>
+                            </relationships>
+                            <state>RUNNING</state>
+                            <style/>
+                            <type>org.apache.nifi.processors.standard.ConvertRecord</type>
+                        </processors>
+                        <processors>
                             <id>f178b69c-b90b-3db6-0000-000000000000</id>
                             <parentGroupId>b243ac12-e87c-3cd2-0000-000000000000</parentGroupId>
                             <position>
@@ -6088,11 +6841,11 @@ ${delivery:equalsIgnoreCase('preview'):ifElse('LIMIT 20','')}</value>
     </entry>
     <entry>
         <key>/file1</key>
-        <value>&lt;a href="http://sandbox-hdp.hortonworks.com:18081/file/${field.value}"&gt;${field.value}&lt;/a&gt;</value>
+        <value>&lt;a href="http://sandbox-hdp.hortonworks.com:18081/files/${field.value}"&gt;${field.value}&lt;/a&gt;</value>
     </entry>
     <entry>
         <key>/file2</key>
-        <value>&lt;a href="http://sandbox-hdp.hortonworks.com:18081/file/${field.value}"&gt;${field.value}&lt;/a&gt;</value>
+        <value>&lt;a href="http://sandbox-hdp.hortonworks.com:18081/files/${field.value}"&gt;${field.value}&lt;/a&gt;</value>
     </entry>
 </properties>
 <runDurationMillis>0</runDurationMillis>
@@ -6555,5 +7308,5 @@ ${delivery:equalsIgnoreCase('preview'):ifElse('LIMIT 20','')}</value>
             <variables/>
         </processGroups>
     </snippet>
-    <timestamp>09/09/2020 00:24:50 UTC</timestamp>
+    <timestamp>09/09/2020 02:33:19 UTC</timestamp>
 </template>
