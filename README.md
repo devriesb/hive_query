@@ -6,14 +6,16 @@ This is a prototype / example application to demonstrate hosting a web app via A
 
   1. Download the "hql_form.xml" template found here: https://raw.githubusercontent.com/devriesb/hive_query/master/templates/hql_form.xml
 
-  2. Import the template into the NiFi instance running on the HDP Sandbox
+  1. Import the template into the NiFi instance running on the HDP Sandbox
+
+  1. Instantiate the template.
 
 
-  3.  Start all processors in the template.  
+  1.  Start all processors in the template.  
       - There will be processors that are invalid due to dependencies on services that have not been started... start those services, then start the processors.
 
 
-  4. The Hive Query App will be available at : http://sandbox-hdp.hortonworks.com:18081/hql.html
+  1. The Hive Query App will be available at : http://sandbox-hdp.hortonworks.com:18081/hql.html
 
        - You may need to wait / refresh for the app to initially become available, as when the NiFi flow starts it needs to download / unpack / install the Hive Query App.  You can examine the NiFi flow for any issues.
 
