@@ -1,4 +1,7 @@
 /*
+ * createTable.groovy
+ *
+ *
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
  * this work for additional information regarding copyright ownership.
@@ -33,11 +36,11 @@ import org.apache.nifi.stream.io.NonCloseableOutputStream
 class GroovyRecordSetWriter implements RecordSetWriter {
     private int recordCount = 0;
     private final OutputStream out;
-    
+
     public GroovyRecordSetWriter(final OutputStream out) {
         this.out = out;
     }
-    
+
     @Override
     WriteResult write(Record r) throws IOException {
         new OutputStreamWriter(new NonCloseableOutputStream(out)).with {osw ->
@@ -47,7 +50,7 @@ class GroovyRecordSetWriter implements RecordSetWriter {
                 }
             }
         }
-        
+
         recordCount++;
         WriteResult.of(1, [:])
     }
@@ -78,19 +81,19 @@ class GroovyRecordSetWriter implements RecordSetWriter {
         }
         WriteResult.of(count, [:])
     }
-    
+
     public void beginRecordSet() throws IOException {
     }
-    
+
     @Override
     public WriteResult finishRecordSet() throws IOException {
         return WriteResult.of(recordCount, [:]);
     }
-    
+
     @Override
     public void close() throws IOException {
     }
-    
+
     @Override
     public void flush() throws IOException {
     }
@@ -107,7 +110,7 @@ class GroovyRecordSetWriterFactory extends AbstractControllerService implements 
     RecordSetWriter createWriter(ComponentLog logger, RecordSchema schema, OutputStream out, Map<String, String> variables) throws SchemaNotFoundException, IOException {
         return new GroovyRecordSetWriter(out)
     }
-    
+
 }
 
 writer = new GroovyRecordSetWriterFactory()
