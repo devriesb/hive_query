@@ -6,7 +6,7 @@
     <snippet>
         <controllerServices>
             <id>a52a4d58-1535-3614-0000-000000000000</id>
-            <parentGroupId>2dcbbec8-49d3-3cdd-0000-000000000000</parentGroupId>
+            <parentGroupId>0f637855-837f-30ee-0000-000000000000</parentGroupId>
             <bundle>
                 <artifact>nifi-hive3-nar</artifact>
                 <group>org.apache.nifi</group>
@@ -180,7 +180,7 @@
         </controllerServices>
         <controllerServices>
             <id>a7c6345b-19eb-3227-0000-000000000000</id>
-            <parentGroupId>2dcbbec8-49d3-3cdd-0000-000000000000</parentGroupId>
+            <parentGroupId>0f637855-837f-30ee-0000-000000000000</parentGroupId>
             <bundle>
                 <artifact>nifi-record-serialization-services-nar</artifact>
                 <group>org.apache.nifi</group>
@@ -266,7 +266,7 @@
         </controllerServices>
         <controllerServices>
             <id>fd5a20e4-7dcd-3760-0000-000000000000</id>
-            <parentGroupId>2dcbbec8-49d3-3cdd-0000-000000000000</parentGroupId>
+            <parentGroupId>0f637855-837f-30ee-0000-000000000000</parentGroupId>
             <bundle>
                 <artifact>nifi-record-serialization-services-nar</artifact>
                 <group>org.apache.nifi</group>
@@ -4707,7 +4707,7 @@ ${key},${now():toNumber()}, ${random():mod(3):toString():replace('0','Telemeter 
                         </connections>
                         <controllerServices>
                             <id>a71e5222-2c50-395b-0000-000000000000</id>
-                            <parentGroupId>ee56da1c-6bae-349f-0000-000000000000</parentGroupId>
+                            <parentGroupId>0f637855-837f-30ee-0000-000000000000</parentGroupId>
                             <bundle>
 <artifact>nifi-scripting-nar</artifact>
 <group>org.apache.nifi</group>
@@ -5711,21 +5711,21 @@ thead td {background-color:#ddffdd; text-align:center; }
     <entry>
         <key>Script Body</key>
         <value>import org.apache.commons.io.IOUtils
-import java.nio.charset.* 
+import java.nio.charset.*
 
 def formatCell = { cell -&gt;
     "&lt;td&gt;${cell}&lt;/td&gt;"
 }
- 
+
 //def formatCell = { cell -&gt;
 //    "&lt;td&gt;${cell.replaceAll('&amp;','&amp;amp;').replaceAll('&lt;','&amp;lt;')}&lt;/td&gt;"
 //}
- 
+
 def formatRow = { row -&gt;
     """&lt;tr&gt;${row.split(',').collect { cell -&gt; formatCell(cell) }.join('')}&lt;/tr&gt;
 """
 }
- 
+
 def formatTable = { csv, header=false -&gt;
     def rows = csv.split('\n').collect { row -&gt; formatRow(row) }
     header \
@@ -5742,7 +5742,7 @@ ${rows[1..-1].join('')}&lt;/tbody&gt;
 ${rows.join('')}&lt;/table&gt;
 """
 }
- 
+
 def formatPage = { title, csv, header=false -&gt;
 """&lt;html&gt;
 &lt;head&gt;
@@ -5756,8 +5756,8 @@ thead td {background-color:#ddffdd; text-align:center; }
 &lt;/html&gt;"""
 }
 
-def flowFile = session.get() 
-if(!flowFile) return 
+def flowFile = session.get()
+if(!flowFile) return
 
 def csv = '''Character,Speech
 The multitude,The messiah! Show us the messiah!
@@ -5768,13 +5768,13 @@ The multitude,Behold his mother! Behold his mother!'''
 
 
 
-flowFile = session.write(flowFile, {inputStream, outputStream -&gt; 
+flowFile = session.write(flowFile, {inputStream, outputStream -&gt;
 
 def text = IOUtils.toString(inputStream, StandardCharsets.UTF_8.name());
 	def html = formatPage('Extra Credit', text, true)
 
-      outputStream.write("${html}".toString().getBytes()) 
-   } as StreamCallback) 
+      outputStream.write("${html}".toString().getBytes())
+   } as StreamCallback)
 session.transfer(flowFile, REL_SUCCESS)</value>
     </entry>
     <entry>
@@ -6444,9 +6444,9 @@ session.transfer(flowFile, REL_SUCCESS)</value>
     </entry>
     <entry>
         <key>hive-query</key>
-        <value>SELECT * 
+        <value>SELECT *
 FROM combined_table2
-WHERE 
+WHERE
 ${sql}
 ${delivery:equalsIgnoreCase('preview'):ifElse('LIMIT 20','')}</value>
     </entry>
