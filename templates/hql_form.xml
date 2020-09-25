@@ -3824,7 +3824,7 @@ ${key},${now():toNumber()}, ${random():mod(3):toString():replace('0','Telemeter 
 <properties>
     <entry>
         <key>File to Fetch</key>
-        <value>/home/raj_ops/hive_query${http.request.uri}</value>
+        <value>/home/raj_ops/hive_query-master${http.request.uri}</value>
     </entry>
     <entry>
         <key>Completion Strategy</key>
