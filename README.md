@@ -27,6 +27,13 @@ This is a prototype / example application to demonstrate hosting a web app via A
 
 ## Application Overview
 
+The application simply presents a UI allowing users to visually construct a query without having to directly write HQL.  For this, it uses jQuery QueryBuilder (https://querybuilder.js.org/).  Below the Query construction interface, there are 4 buttons:
+
+- **Reset** - Clears the constructed query and any preview results
+- **Show HQL** - Displays the HQL equivalent of the constructed query
+- **Preview** - Executes the constructed query, limiting the results to 20 rows and displaying it on the page as an HTML table
+- **Download** - Executes the constructed query, and returns *all* results as a CSV file
+
 
 ## Flow Overview
 
@@ -49,7 +56,11 @@ If the request was for a "download", the results are returned as a CSV file.  Fo
 
 ### Handle Raw file
 
-Requests for raw files from the data lake are routed here.  The files are retrieved from the "${data.lake.raw.files}" directory if present, and
+Requests for raw files from the data lake are routed here.  The files are retrieved from the "${data.lake.raw.files}" directory if present, and returned.  If a requested file is not found or some other error occurs, a 404 or 500 error is returned respectively.
+
+### Generate Hive Dummy Data
+
+This process group generates data to store in Hive and HDFS to demonstrate use of the application.  It generates random data to store in Hive, and then creates the referenced files in HDFS.  The content of these files is simply the name of the file, but converted to uppercase.
 
 ## Running the application in a different environment
 
