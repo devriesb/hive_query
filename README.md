@@ -49,7 +49,7 @@ If the request was for a "download", the results are returned as a CSV file.  Fo
 
 ### Handle Raw file
 
-Requests for raw files from the data
+Requests for raw files from the data lake are routed here.  The files are retrieved from the "${data.lake.raw.files}" directory if present, and
 
 ## Running the application in a different environment
 
@@ -57,5 +57,7 @@ There are variables set at the "hive web form" level that specify some behaviors
 
 - **app.dir** - Specifies where the application will be "installed"
 - **hq.git.repo.url** - Specified the location of the application repository, which will be used to download and install the app.
-
-Additionally, if running from somewhere besides the sandbox, you will need to provide the locations to the appropriate hive-site.xml and core-site.xml config files.
+-  **hive.db.url** - The hive database connection URL
+-  **core.site.xml** - The location on disk of core-site.xml
+-  **hive.site.xml** - The location on disk of hive-site.xml
+- **data.lake.raw.files** - The location of the raw files in HDFS
