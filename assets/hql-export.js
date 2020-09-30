@@ -144,7 +144,7 @@ $.ajaxSetup({
       'Content-Type': 'application/json'
    }
 });
-    $.post("http://sandbox-hdp.hortonworks.com:18081/submit",
+    $.post("/submit",
 `{"sql": "${result.sql}","delivery": "preview"}`
 , function(data,status){
             $('#preview-results').html(data);
@@ -160,7 +160,7 @@ $.ajaxSetup({
       'Content-Type': 'application/json'
    }
 });
-    $.post("http://sandbox-hdp.hortonworks.com:18081/submit",
+    $.post("/submit",
 `{"sql": "${result.sql}","delivery": "download"}`
 , function(data,status){
         //alert("Data: " + data + "\nStatus: " + status);
@@ -179,6 +179,3 @@ $.ajaxSetup({
 
         });
 });
-
-
-
