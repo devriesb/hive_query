@@ -17,7 +17,7 @@ This is a prototype / example application to demonstrate hosting a web app via A
   1. Instantiate the template.
 
 
-  1.  Start all processors in the template.  
+  1.  Start all services and processors in the template.   
       - There will be processors that are invalid due to dependencies on services that have not been started... start those services, then start the processors.
 
 
