@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <template encoding-version="1.3">
-    <description>9-30-2020 9:15 am</description>
+    <description>9-30-2020 10 am</description>
     <groupId>e9b72795-0173-1000-3c5b-78db4402ab91</groupId>
     <name>hql form</name>
     <snippet>
@@ -4143,7 +4143,7 @@ ${delivery:equalsIgnoreCase('preview'):ifElse('LIMIT 20','')}</value>
     </entry>
     <entry>
         <key>HDFS Filename</key>
-        <value>dummy_files2/${http.request.uri:substringAfterLast('/')}</value>
+        <value>${data.lake.raw.files}/${http.request.uri:substringAfterLast('/')}</value>
     </entry>
     <entry>
         <key>Compression codec</key>
@@ -7354,7 +7354,7 @@ ${key},${now():toNumber()}, ${random():mod(3):toString():replace('0','Telemeter 
             </entry>
             <entry>
                 <key>Directory</key>
-                <value>dummy_files2</value>
+                <value>${data.lake.raw.files}</value>
             </entry>
             <entry>
                 <key>Conflict Resolution Strategy</key>
@@ -7864,16 +7864,20 @@ ${key},${now():toNumber()}, ${random():mod(3):toString():replace('0','Telemeter 
                     <value>/etc/hadoop/3.0.1.0-187/0/core-site.xml </value>
                 </entry>
                 <entry>
-                    <key>app.dir</key>
-                    <value>/home/raj_ops/</value>
+                    <key>hive.db.url</key>
+                    <value>jdbc:hive2://sandbox-hdp.hortonworks.com:2181/;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2</value>
+                </entry>
+                <entry>
+                    <key>data.lake.raw.files</key>
+                    <value>dummy_files2</value>
                 </entry>
                 <entry>
                     <key>hive.site.xml</key>
                     <value>/etc/hive/3.0.1.0-187/0/hive-site.xml</value>
                 </entry>
                 <entry>
-                    <key>hive.db.url</key>
-                    <value>jdbc:hive2://sandbox-hdp.hortonworks.com:2181/;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2</value>
+                    <key>app.dir</key>
+                    <value>/home/raj_ops/</value>
                 </entry>
                 <entry>
                     <key>hq.git.repo.url</key>
@@ -7882,5 +7886,5 @@ ${key},${now():toNumber()}, ${random():mod(3):toString():replace('0','Telemeter 
             </variables>
         </processGroups>
     </snippet>
-    <timestamp>09/10/2020 06:08:59 UTC</timestamp>
+    <timestamp>09/10/2020 07:04:59 UTC</timestamp>
 </template>
